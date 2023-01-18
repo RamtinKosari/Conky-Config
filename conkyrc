@@ -1,0 +1,88 @@
+conky.config = {
+	-- Size Configs
+	alignment = 'top_left',
+	gap_x = 0,
+	gap_y = 33,
+	minimum_width = 270,
+	minimum_height = 0,
+
+	-- Conky Configs
+	cpu_avg_samples = 2,
+	double_buffer = true,
+	imlib_cache_size = 0,
+	net_avg_samples = 2,
+	no_buffers = true,
+	out_to_console = false,
+	override_utf8_locale = true,
+	use_xft = true,
+	update_interval = 0.001,
+	xinerama_head = 1,
+
+	-- Color and Font Configs
+	default_color = '#75E6DA',
+	font = 'Ubuntu Mono:size=12',
+	own_window_colour = '#000000',
+	color1 = '75E6DA',
+	color2 = '2D968C',
+	color3 = 'AAAAAA',
+	color4 = '566573',
+	color5 = '35C0B3',
+	color6 = '555555',
+	color7 = '888888',
+
+	-- Draw Configs
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+
+	-- Window Configs
+	border_inner_margin = 5,
+	border_outer_margin = 0,
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_argb_value = 50,
+	own_window_argb_visual = true,
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	text_buffer_size = 32768,
+	xftalpha = 0.3,
+	uppercase = false,
+};
+conky.text = [[
+${font sans-serif:bold:size=10}CPU ${hr 2}${font}${color2}
+${font sans-serif:bold:size=7}${goto 30}CPU 1 ${goto 95}CPU 2${goto 160}CPU 3${goto 225}CPU 4
+${voffset -3}${color3}${goto 18}${cpugraph cpu1 13,50}${goto 83}${cpugraph cpu2 13,50}${goto 148}${cpugraph cpu3 13,50}${goto 213}${cpugraph cpu4 13,50}
+${voffset -3}${font sans-serif:normal:size=8}${goto 35}${cpu cpu1}%${goto 101}${cpu cpu2}%${goto 165}${cpu cpu3}%${goto 230}${cpu cpu4}%${color2}
+
+${font sans-serif:bold:size=7}${goto 30}CPU 5 ${goto 95}CPU 6${goto 160}CPU 7${goto 225}CPU 8
+${voffset -3}${color3}${goto 18}${cpugraph cpu5 13,50}${goto 83}${cpugraph cpu6 13,50}${goto 148}${cpugraph cpu7 13,50}${goto 213}${cpugraph cpu8 13,50}
+${voffset -3}${font sans-serif:normal:size=8}${goto 35}${cpu cpu5}%${goto 101}${cpu cpu6}%${goto 165}${cpu cpu7}%${goto 230}${cpu cpu8}%${color2}
+
+${font sans-serif:bold:size=7}${goto 30}CPU 9 ${goto 92}CPU 10${goto 157}CPU 11${goto 222}CPU 12
+${voffset -3}${color3}${goto 18}${cpugraph cpu9 13,50}${goto 83}${cpugraph cpu10 13,50}${goto 148}${cpugraph cpu11 13,50}${goto 213}${cpugraph cpu12 13,50}
+${voffset -3}${font sans-serif:normal:size=8}${goto 35}${cpu cpu9}%${goto 101}${cpu cpu10}%${goto 165}${cpu cpu11}% ${goto 230}${cpu cpu12}%${color2}
+
+${font sans-serif:bold:size=7}${goto 27}CPU 13 ${goto 92}CPU 14${goto 157}CPU 15${goto 222}CPU 16
+${voffset -3}${color3}${goto 18}${cpugraph cpu13 13,50}${goto 83}${cpugraph cpu14 13,50}${goto 148}${cpugraph cpu15 13,50}${goto 213}${cpugraph cpu16 13,50}
+${voffset -3}${font sans-serif:normal:size=8}${goto 35}${cpu cpu13}%${goto 101}${cpu cpu14}%${goto 165}${cpu cpu15}%${goto 230}${cpu cpu16}%${color2}
+
+${font sans-serif:bold:size=7}CPU 1${goto 50}${color6}${cpubar cpu1 9, 80}${goto 155}${color2}CPU 2${color6}${goto 200}${cpubar cpu2 9, 80}${color2}
+${font sans-serif:bold:size=7}CPU 3${goto 50}${color6}${cpubar cpu3 9, 80}${goto 155}${color2}CPU 4${color6}${goto 200}${cpubar cpu4 9, 80}${color2}
+${font sans-serif:bold:size=7}CPU 5${goto 50}${color6}${cpubar cpu5 9, 80}${goto 155}${color2}CPU 6${color6}${goto 200}${cpubar cpu6 9, 80}${color2}
+${font sans-serif:bold:size=7}CPU 7${goto 50}${color6}${cpubar cpu7 9, 80}${goto 155}${color2}CPU 8${color6}${goto 200}${cpubar cpu8 9, 80}${color2}
+${font sans-serif:bold:size=7}CPU 9${goto 50}${color6}${cpubar cpu9 9, 80}${goto 155}${color2}CPU 10${color6}${goto 200}${cpubar cpu10 9, 80}${color2}
+${font sans-serif:bold:size=7}CPU 11${goto 50}${color6}${cpubar cpu11 9, 80}${goto 155}${color2}CPU 12${color6}${goto 200}${cpubar cpu12 9, 80}${color2}
+${font sans-serif:bold:size=7}CPU 13${goto 50}${color6}${cpubar cpu13 9, 80}${goto 155}${color2}CPU 14${color6}${goto 200}${cpubar cpu14 9, 80}${color2}
+${font sans-serif:bold:size=7}CPU 15${goto 50}${color6}${cpubar cpu15 9, 80}${goto 155}${color2}CPU 16${color6}${goto 200}${cpubar cpu16 9, 80}${color2}
+
+${font sans-serif:bold:size=8}CPU TEMP : ${color3}${hwmon 6 temp 1}°C  ${hwmon 2 temp 1}°C  ${hwmon 3 temp 1}°C  ${hwmon 1 temp 1}°C  ${hwmon 4 temp 1}°C  ${hwmon 5 temp 1}°C${color}
+
+${font sans-serif:bold:size=10}NETWORK ${hr 2}${font}${color2}
+${font sans-serif:bold:size=8}${goto 18}IP ADDRESS: ${color7}${addr wlx200db023e663}
+${if_match "${addr wlx200db023e663}"!="No Address"}${font sans-serif:bold:size=8}${goto 48}${color2}Download${goto 198}Upload
+${goto 60}${color7}${downspeedf wlx200db023e663}k/s${goto 200}${color7}${upspeedf wlx200db023e663}k/s
+${goto 18}${downspeedgraph wlx200db023e663 40,123 00FF00 003300 -t}${goto 160}${upspeedgraph wlx200db023e663 40,123 FF0000 330000 -t}
+${color7}${goto 50}(${totaldown wlx200db023e663})${goto 190}(${totalup wlx200db023e663})
+${endif}${color}
+]];
