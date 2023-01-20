@@ -22,7 +22,7 @@ conky.config = {
 	default_color = '#75E6DA',
 	font = 'Ubuntu Mono:size=12',
 	own_window_colour = '#000000',
-	color1 = '75E6DA',
+	color1 = '00E6DA',
 	color2 = '2D968C',
 	color3 = 'AAAAAA',
 	color4 = '566573',
@@ -108,4 +108,21 @@ ${if_match "${addr wlx200db023e663}"!="No Address"}${font sans-serif:bold:size=8
 ${goto 60}${color7}${downspeedf wlx200db023e663}k/s${goto 200}${color7}${upspeedf wlx200db023e663}k/s
 ${goto 18}${downspeedgraph wlx200db023e663 40,123 00FF00 003300}${goto 160}${upspeedgraph wlx200db023e663 40,123 FF0000 330000}
 ${color7}${goto 50}(${totaldown wlx200db023e663})${goto 190}(${totalup wlx200db023e663})${endif}${color}
+
+${font sans-serif:bold:size=10}PROCESSES ${hr 2}${font}${color2}
+${font sans-serif:bold:size=8}AMOUNT : ${color3}${execi 1000 ps aux | wc -l}${color2}${alignr}TOTAL THREADS : ${color3}${threads}${color}
+${font sans-serif:bold:size=8}${color3}NAME ${alignr} PID     CPU      MEM  ${font sans-serif:bold:size=8}${color3}
+${voffset -4}${hr 1}${color4}
+${top name 1} $alignr ${top pid 1} ${top cpu 1}% ${top mem 1}%${color6}
+${top name 2} $alignr ${top pid 2} ${top cpu 2}% ${top mem 2}%${color4}
+${top name 3} $alignr ${top pid 3} ${top cpu 3}% ${top mem 3}%${color6}
+${top name 4} $alignr ${top pid 4} ${top cpu 4}% ${top mem 4}%${color4}
+${top name 5} $alignr ${top pid 5} ${top cpu 5}% ${top mem 5}%${color6}
+${top name 6} $alignr ${top pid 6} ${top cpu 6}% ${top mem 6}%${color4}
+${top name 7} $alignr ${top pid 7} ${top cpu 7}% ${top mem 7}%${color6}
+${top name 8} $alignr ${top pid 8} ${top cpu 8}% ${top mem 8}%${color4}
+${top name 9} $alignr ${top pid 9} ${top cpu 9}% ${top mem 9}%${color6}
+${top name 10} $alignr ${top pid 10} ${top cpu 10}% ${top mem 10}%
+
+
 ]];
