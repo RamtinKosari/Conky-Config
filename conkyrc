@@ -15,20 +15,22 @@ conky.config = {
 	out_to_console = false,
 	override_utf8_locale = true,
 	use_xft = true,
-	update_interval = 0.001,
+	update_interval = 0.01,
 	xinerama_head = 1,
 
 	-- Color and Font Configs
 	default_color = '#75E6DA',
 	font = 'Ubuntu Mono:size=12',
 	own_window_colour = '#000000',
-	color1 = '75E6DA',
+	color1 = '00E6DA',
 	color2 = '2D968C',
 	color3 = 'AAAAAA',
 	color4 = '566573',
 	color5 = '35C0B3',
 	color6 = '555555',
 	color7 = '888888',
+	color8 = 'FFBF00',
+	color9 = 'FF0000',
 
 	-- Draw Configs
 	draw_shades = false,
@@ -52,20 +54,20 @@ conky.config = {
 conky.text = [[
 ${font sans-serif:bold:size=10}CPU ${hr 2}${font}${color2}
 ${font sans-serif:bold:size=7}${goto 30}CPU 1 ${goto 95}CPU 2${goto 160}CPU 3${goto 225}CPU 4
-${voffset -3}${color3}${goto 18}${cpugraph cpu1 13,50}${goto 83}${cpugraph cpu2 13,50}${goto 148}${cpugraph cpu3 13,50}${goto 213}${cpugraph cpu4 13,50}
-${voffset -3}${font sans-serif:normal:size=8}${goto 35}${cpu cpu1}%${goto 101}${cpu cpu2}%${goto 165}${cpu cpu3}%${goto 230}${cpu cpu4}%${color2}
+${voffset -3}${color3}${if_match ${cpu cpu1}>=70}${color8}${endif}${if_match ${cpu cpu1}>95}${color9}${endif}${goto 18}${cpugraph cpu1 13,50}${if_match ${cpu cpu2}>=70}${color8}${endif}${if_match ${cpu cpu2}>95}${color9}${endif}${goto 83}${cpugraph cpu2 13,50}${if_match ${cpu cpu3}>=70}${color8}${endif}${if_match ${cpu cpu3}>95}${color9}${endif}${goto 148}${cpugraph cpu3 13,50}${if_match ${cpu cpu4}>=70}${color8}${endif}${if_match ${cpu cpu4}>95}${color9}${endif}${goto 213}${cpugraph cpu4 13,50}
+${voffset -3}${color3}${if_match ${cpu cpu1}>=70}${color8}${endif}${if_match ${cpu cpu1}>95}${color9}${endif}${font sans-serif:normal:size=8}${goto 35}${cpu cpu1}%${if_match ${cpu cpu2}>=70}${color8}${endif}${if_match ${cpu cpu2}>95}${color9}${endif}${goto 101}${cpu cpu2}%${if_match ${cpu cpu3}>=70}${color8}${endif}${if_match ${cpu cpu3}>95}${color9}${endif}${goto 165}${cpu cpu3}%${if_match ${cpu cpu4}>=70}${color8}${endif}${if_match ${cpu cpu4}>95}${color9}${endif}${goto 230}${cpu cpu4}%${color2}
 
 ${font sans-serif:bold:size=7}${goto 30}CPU 5 ${goto 95}CPU 6${goto 160}CPU 7${goto 225}CPU 8
-${voffset -3}${color3}${goto 18}${cpugraph cpu5 13,50}${goto 83}${cpugraph cpu6 13,50}${goto 148}${cpugraph cpu7 13,50}${goto 213}${cpugraph cpu8 13,50}
-${voffset -3}${font sans-serif:normal:size=8}${goto 35}${cpu cpu5}%${goto 101}${cpu cpu6}%${goto 165}${cpu cpu7}%${goto 230}${cpu cpu8}%${color2}
+${voffset -3}${color3}${if_match ${cpu cpu5}>=70}${color8}${endif}${if_match ${cpu cpu5}>95}${color9}${endif}${goto 18}${cpugraph cpu5 13,50}${if_match ${cpu cpu6}>=70}${color8}${endif}${if_match ${cpu cpu6}>95}${color9}${endif}${goto 83}${cpugraph cpu6 13,50}${if_match ${cpu cpu7}>=70}${color8}${endif}${if_match ${cpu cpu7}>95}${color9}${endif}${goto 148}${cpugraph cpu7 13,50}${if_match ${cpu cpu8}>=70}${color8}${endif}${if_match ${cpu cpu8}>95}${color9}${endif}${goto 213}${cpugraph cpu8 13,50}
+${voffset -3}${color3}${if_match ${cpu cpu5}>=70}${color8}${endif}${if_match ${cpu cpu5}>95}${color9}${endif}${font sans-serif:normal:size=8}${goto 35}${cpu cpu5}%${if_match ${cpu cpu6}>=70}${color8}${endif}${if_match ${cpu cpu6}>95}${color9}${endif}${goto 101}${cpu cpu6}%${if_match ${cpu cpu7}>=70}${color8}${endif}${if_match ${cpu cpu7}>95}${color9}${endif}${goto 165}${cpu cpu7}%${if_match ${cpu cpu8}>=70}${color8}${endif}${if_match ${cpu cpu8}>95}${color9}${endif}${goto 230}${cpu cpu8}%${color2}
 
 ${font sans-serif:bold:size=7}${goto 30}CPU 9 ${goto 92}CPU 10${goto 157}CPU 11${goto 222}CPU 12
-${voffset -3}${color3}${goto 18}${cpugraph cpu9 13,50}${goto 83}${cpugraph cpu10 13,50}${goto 148}${cpugraph cpu11 13,50}${goto 213}${cpugraph cpu12 13,50}
-${voffset -3}${font sans-serif:normal:size=8}${goto 35}${cpu cpu9}%${goto 101}${cpu cpu10}%${goto 165}${cpu cpu11}% ${goto 230}${cpu cpu12}%${color2}
+${voffset -3}${color3}${if_match ${cpu cpu9}>=70}${color8}${endif}${if_match ${cpu cpu9}>95}${color9}${endif}${goto 18}${cpugraph cpu9 13,50}${if_match ${cpu cpu10}>=70}${color8}${endif}${if_match ${cpu cpu10}>95}${color9}${endif}${goto 83}${cpugraph cpu10 13,50}${if_match ${cpu cpu11}>=70}${color8}${endif}${if_match ${cpu cpu11}>95}${color9}${endif}${goto 148}${cpugraph cpu11 13,50}${if_match ${cpu cpu12}>=70}${color8}${endif}${if_match ${cpu cpu12}>95}${color9}${endif}${goto 213}${cpugraph cpu12 13,50}
+${voffset -3}${color3}${if_match ${cpu cpu9}>=70}${color8}${endif}${if_match ${cpu cpu9}>95}${color9}${endif}${font sans-serif:normal:size=8}${goto 35}${cpu cpu9}%${if_match ${cpu cpu10}>=70}${color8}${endif}${if_match ${cpu cpu10}>95}${color9}${endif}${goto 101}${cpu cpu10}%${if_match ${cpu cpu11}>=70}${color8}${endif}${if_match ${cpu cpu11}>95}${color9}${endif}${goto 165}${cpu cpu11}%${if_match ${cpu cpu12}>=70}${color8}${endif}${if_match ${cpu cpu12}>95}${color9}${endif}${goto 230}${cpu cpu12}%${color2}
 
 ${font sans-serif:bold:size=7}${goto 27}CPU 13 ${goto 92}CPU 14${goto 157}CPU 15${goto 222}CPU 16
-${voffset -3}${color3}${goto 18}${cpugraph cpu13 13,50}${goto 83}${cpugraph cpu14 13,50}${goto 148}${cpugraph cpu15 13,50}${goto 213}${cpugraph cpu16 13,50}
-${voffset -3}${font sans-serif:normal:size=8}${goto 35}${cpu cpu13}%${goto 101}${cpu cpu14}%${goto 165}${cpu cpu15}%${goto 230}${cpu cpu16}%${color2}
+${voffset -3}${color3}${if_match ${cpu cpu13}>=70}${color8}${endif}${if_match ${cpu cpu13}>95}${color9}${endif}${goto 18}${cpugraph cpu13 13,50}${if_match ${cpu cpu14}>=70}${color8}${endif}${if_match ${cpu cpu14}>95}${color9}${endif}${goto 83}${cpugraph cpu14 13,50}${if_match ${cpu cpu15}>=70}${color8}${endif}${if_match ${cpu cpu15}>95}${color9}${endif}${goto 148}${cpugraph cpu15 13,50}${if_match ${cpu cpu16}>=70}${color8}${endif}${if_match ${cpu cpu16}>95}${color9}${endif}${goto 213}${cpugraph cpu16 13,50}
+${voffset -3}${color3}${if_match ${cpu cpu13}>=70}${color8}${endif}${if_match ${cpu cpu13}>95}${color9}${endif}${font sans-serif:normal:size=8}${goto 35}${cpu cpu13}%${if_match ${cpu cpu14}>=70}${color8}${endif}${if_match ${cpu cpu14}>95}${color9}${endif}${goto 101}${cpu cpu14}%${if_match ${cpu cpu15}>=70}${color8}${endif}${if_match ${cpu cpu15}>95}${color9}${endif}${goto 165}${cpu cpu15}%${if_match ${cpu cpu16}>=70}${color8}${endif}${if_match ${cpu cpu16}>95}${color9}${endif}${goto 230}${cpu cpu16}%${color2}
 
 ${font sans-serif:bold:size=7}CPU 1${goto 50}${color6}${cpubar cpu1 9, 80}${goto 155}${color2}CPU 2${color6}${goto 200}${cpubar cpu2 9, 80}${color2}
 ${font sans-serif:bold:size=7}CPU 3${goto 50}${color6}${cpubar cpu3 9, 80}${goto 155}${color2}CPU 4${color6}${goto 200}${cpubar cpu4 9, 80}${color2}
@@ -76,13 +78,51 @@ ${font sans-serif:bold:size=7}CPU 11${goto 50}${color6}${cpubar cpu11 9, 80}${go
 ${font sans-serif:bold:size=7}CPU 13${goto 50}${color6}${cpubar cpu13 9, 80}${goto 155}${color2}CPU 14${color6}${goto 200}${cpubar cpu14 9, 80}${color2}
 ${font sans-serif:bold:size=7}CPU 15${goto 50}${color6}${cpubar cpu15 9, 80}${goto 155}${color2}CPU 16${color6}${goto 200}${cpubar cpu16 9, 80}${color2}
 
-${font sans-serif:bold:size=8}CPU TEMP : ${color3}${hwmon 6 temp 1}°C  ${hwmon 2 temp 1}°C  ${hwmon 3 temp 1}°C  ${hwmon 1 temp 1}°C  ${hwmon 4 temp 1}°C  ${hwmon 5 temp 1}°C${color}
+${font sans-serif:bold:size=8}${alignc}${color3}${execi 1000 grep model /proc/cpuinfo | cut -d : -f2 | tail -1 | sed 's/\s//'}${color2}
+
+${font sans-serif:bold:size=8}CPU TEMP : ${color3}${if_match ${hwmon 6 temp 1}>=70}${color8}${endif}${if_match ${hwmon 6 temp 1}>=90}${color9}${endif}${hwmon 6 temp 1}°C  ${color3}${if_match ${hwmon 2 temp 1}>=70}${color8}${endif}${if_match ${hwmon 2 temp 1}>=90}${color9}${endif}${hwmon 2 temp 1}°C  ${color3}${if_match ${hwmon 3 temp 1}>=70}${color8}${endif}${if_match ${hwmon 3 temp 1}>=90}${color9}${endif}${hwmon 3 temp 1}°C  ${color3}${if_match ${hwmon 1 temp 1}>=70}${color8}${endif}${if_match ${hwmon 1 temp 1}>=90}${color9}${endif}${hwmon 1 temp 1}°C  ${color3}${if_match ${hwmon 4 temp 1}>=70}${color8}${endif}${if_match ${hwmon 4 temp 1}>=90}${color9}${endif}${hwmon 4 temp 1}°C  ${color3}${if_match ${hwmon 5 temp 1}>=70}${color8}${endif}${if_match ${hwmon 5 temp 1}>=90}${color9}${endif}${hwmon 5 temp 1}°C${color2}
+${font sans-serif:bold:size=8}TOTAL CPU USAGE : ${alignr}${color3}${cpu}% ${color6}${cpubar 9, 120}${color2}
+${font sans-serif:bold:size=8}CPU FREQUENCY : ${color3}${freq} MHz${color2}
+${font sans-serif:bold:size=8}FAN TEMP : ${color3}${acpitemp}°C${color}
+
+${font sans-serif:bold:size=10}MEMORY ${hr 2}${font}${color2}
+${font sans-serif:bold:size=8}RAM : ${color3}${mem} / ${memmax}${alignr}${memperc}% ${membar 7, 70}${color2}
+${font sans-serif:bold:size=8}SWAP : ${color3}${swap} / ${swapmax}${alignr}${swapperc}% ${swapbar 7, 70}${color}
+
+${font sans-serif:bold:size=10}STORAGE ${hr 2}${font}${color2}
+${font sans-serif:bold:size=8}USED : ${color3}${fs_used} / ${fs_size} ${alignr}${fs_used_perc}% ${fs_bar 7, 70}${color2}
+${font sans-serif:bold:size=8}Free : ${color3}${fs_free}${color2}
+${font sans-serif:bold:size=8}Type : ${color3}${fs_type}${color}
+
+${font sans-serif:bold:size=10}SYSTEM ${hr 2}${font}${color2}
+${font sans-serif:bold:size=8}INFO : ${color3}${sysname} ${distribution} ${machine} ${kernel}${color2}
+${font sans-serif:bold:size=8}BATTERY : ${color3}${uppercase ${battery_status}}${color3} ${alignr}${battery_percent}% ${if_match ${battery_percent}<=20}${color9}${endif}${if_match ${battery_percent}>20}${color8}${endif}${if_match ${battery_percent}>80}${color #00BB00}${endif}${if_match "${battery_status}"=="charged"}${color #00CCFF}${endif} ${battery_bar 9, 100}${color2}
+${font sans-serif:bold:size=8}LANGUAGE : ${color3}${keyboard_layout}${color2}
+${font sans-serif:bold:size=8}UPTIME : ${color3}${uptime}${color2}
+${font sans-serif:bold:size=8}Desktop : ${color3}${desktop}/${desktop_number} ${color2}
+${font sans-serif:bold:size=8}Monitors : ${color3}${monitor_number}${color}
 
 ${font sans-serif:bold:size=10}NETWORK ${hr 2}${font}${color2}
 ${font sans-serif:bold:size=8}${goto 18}IP ADDRESS: ${color7}${addr wlx200db023e663}
 ${if_match "${addr wlx200db023e663}"!="No Address"}${font sans-serif:bold:size=8}${goto 48}${color2}Download${goto 198}Upload
 ${goto 60}${color7}${downspeedf wlx200db023e663}k/s${goto 200}${color7}${upspeedf wlx200db023e663}k/s
-${goto 18}${downspeedgraph wlx200db023e663 40,123 00FF00 003300 -t}${goto 160}${upspeedgraph wlx200db023e663 40,123 FF0000 330000 -t}
-${color7}${goto 50}(${totaldown wlx200db023e663})${goto 190}(${totalup wlx200db023e663})
-${endif}${color}
+${goto 18}${downspeedgraph wlx200db023e663 40,123 00FF00 003300}${goto 160}${upspeedgraph wlx200db023e663 40,123 FF0000 330000}
+${color7}${goto 50}(${totaldown wlx200db023e663})${goto 190}(${totalup wlx200db023e663})${endif}${color}
+
+${font sans-serif:bold:size=10}PROCESSES ${hr 2}${font}${color2}
+${font sans-serif:bold:size=8}AMOUNT : ${color3}${execi 1000 ps aux | wc -l}${color2}${alignr}TOTAL THREADS : ${color3}${threads}${color}
+${font sans-serif:bold:size=8}${color3}NAME ${alignr} PID     CPU      MEM  ${font sans-serif:bold:size=8}${color3}
+${voffset -4}${hr 1}${color4}
+${top name 1} $alignr ${top pid 1} ${top cpu 1}% ${top mem 1}%${color6}
+${top name 2} $alignr ${top pid 2} ${top cpu 2}% ${top mem 2}%${color4}
+${top name 3} $alignr ${top pid 3} ${top cpu 3}% ${top mem 3}%${color6}
+${top name 4} $alignr ${top pid 4} ${top cpu 4}% ${top mem 4}%${color4}
+${top name 5} $alignr ${top pid 5} ${top cpu 5}% ${top mem 5}%${color6}
+${top name 6} $alignr ${top pid 6} ${top cpu 6}% ${top mem 6}%${color4}
+${top name 7} $alignr ${top pid 7} ${top cpu 7}% ${top mem 7}%${color6}
+${top name 8} $alignr ${top pid 8} ${top cpu 8}% ${top mem 8}%${color4}
+${top name 9} $alignr ${top pid 9} ${top cpu 9}% ${top mem 9}%${color6}
+${top name 10} $alignr ${top pid 10} ${top cpu 10}% ${top mem 10}%
+
+
 ]];
