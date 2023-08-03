@@ -24,3 +24,6 @@ save and close and now you see new design of your conky
 - Battery state
 - Storage usage
 - Memory usage
+
+## Sample Image
+![Sample Image](./sample.png)
