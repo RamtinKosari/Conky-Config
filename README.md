@@ -27,3 +27,5 @@ save and close and now you see new design of your conky
 
 ## Sample Image
 ![Sample Image](./sample.png)
+
+## Please Star :D
