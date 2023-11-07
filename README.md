@@ -1,5 +1,6 @@
 # About
 This Conky Configs shows very beautiful configuration of conky at top left of your screen for Debian Linux Distribution
+<img src="./sample.png" width="21.5%" align="left" loading="eager"></img>
 ## Installation
 First execute commands below in order to install conky
 ```
@@ -24,8 +25,5 @@ save and close and now you see new design of your conky
 - Battery state
 - Storage usage
 - Memory usage
-
-## Sample Image
-![Sample Image](./sample.png)
 
 ## Please Star :D
